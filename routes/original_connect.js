@@ -5,7 +5,9 @@ module.exports = function(app){
     
     urlRootOriginalConnect += 'scopes=account&callback_url=http://meuservidor.com/myapp&callback_id=1&developer_key=123'
 
-    app.get('original_callback', (req, res) => {
+    global.sessionOriginal = []
+
+    app.get('/original_callback', (req, res) => {
 
         var authCode = req.query.auth_code
         var uid = req.query.uid
@@ -13,7 +15,16 @@ module.exports = function(app){
         console.log(authCode)
         console.log(uid)
 
+        sessionOriginal.push({
+            authCode, uid
+        })
         
+    })
+
+    app.get('/get_cached_session', (req, res) => {
+
+        res.send(global.sessionOriginal)
+
     })
 
 }
