@@ -29,9 +29,11 @@ module.exports = function(app){
 
     })
 
-    app.get('reset_cached_session', (req, res) => {
+    app.get('/reset_cached_session', (req, res) => {
 
         global.sessionOriginal = []
+
+        res.send('Session Reset Sucess!')
 
     })
 
