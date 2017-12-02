@@ -18,6 +18,8 @@ module.exports = function(app){
         sessionOriginal.push({
             authCode, uid
         })
+
+        res.send('Callback Original Connect Handled !!!')
         
     })
 
