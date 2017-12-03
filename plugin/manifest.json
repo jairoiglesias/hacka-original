@@ -11,7 +11,9 @@
 		"tabs",
 		"activeTab",
     	"storage",
-		"https://*/*"
+		"notifications",
+		"https://*/*",
+		"http://*/*"
 	],
 	"browser_action" : {
 		"default_popup": "index.html"
@@ -19,14 +21,8 @@
 	"content_scripts": [
 	    {
 	      "matches": ["*://*/*"],
-	      "js": ["jquery.js"],
-		  "all_frames": true
-	    }
-  	],
-	"background" : {
-		"scripts":[
-			"plugin_desconto.js"
-		]	
-	}
+	      "js": ["jquery.js", "domReader.js", "notify.min.js"]
+		}
+	]
 	
 }

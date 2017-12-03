@@ -33,11 +33,24 @@ $(document).ready(function(){
         })
 
     })
-    
-    setInterval(function(){
 
-            console.log('Analisando pagina atual ...')
+    var checkLogin = function(){
 
-        }, 500)
+        // Efetua o reset de sessão cacheada no Heroku
+        var promise = $.ajax({
+            url: 'https://hacka-original.herokuapp.com/get_cached_session'
+        })
+
+        promise.then(function(result){
+
+            if(result.length != 0){
+                window.location.href = 'login_success.html'
+            }
+
+        })
+
+    }
+
+    checkLogin()
 
 })
