@@ -1,146 +1,75 @@
-extends layout
-
-block content
-  h2 Tester (^_^)
-  input(type="button" id="btn_enviar" value="Enviar")
-  // Log do processo de analise de vox
-  //- h4 Log do processamento do SpeechRecognition
-  
-  pre(id='log')
-  div(id="clear")
-  
-  //- Container ira receber o processamento HTML resultante da analise de audio
-  //- h4 Container da construção do site
-  div(id='container')
-  
-  style(type="text/css").
-    #log{
-      border:1px solid lightseagreen;
-      padding:5px;
-      height: 80px;
-      width: 60%;
-      border-radius:3px;
-      overflow:scroll;
-      float:left;
-      margin-left:15px;
-    }
-    
-    #container{
-      border:1px solid gainsboro;
-      padding:5px;
-      height: 800px;
-      border-radius:3px;
-      width: 100%;
-      //- float:right;
-      margin-top:10px;
-      overflow:auto;
-    
-    }
-    
-    #clear{
-      clear:both;
-    }
-    
-    #btn_enviar{
-      float:left;
-      width:100px;
-      margin-top:10px;
-    }
-    
-    h2{
-      font-family:
-    }
-    
-  script(type="text/javascript" src="javascripts/SpeechConstructEngine.js")
-  
-  script(type="text/javascript").
-  
-    // Auto-Scroll do Log
-    setTimeout(function(){
-      var pre = jQuery("#log");
-      pre.scrollTop( pre.prop("scrollHeight") );
-    }, 1000);
-  
-    // Função para imprimir texto na div Log
-    function log(text){
-      $('#log').append('\n' + text);
-      
-      var div = document.getElementById('log');
-      div.scrollTop = div.scrollHeight - div.clientHeight;
-    }
-    
-    // Função para iniciar a API do SpeechRecognition
-    function startRecognizer(callback){
-      
-      // Efetua validação se Navegador possui suporte a tecnologia SpeechRecognition
-      window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || null;
-      
-      if (window.SpeechRecognition === null) {
-        log('Seu navegador não suporta SpeechRecognition');
-        return false;
-      }
-      
-      log('Suporte da API SpeechRecognition valido para este navegador');
-      
-      // Cria novos objetos SpeechRecognition e speechConstructEngine
-      var recognizer = new window.SpeechRecognition();
-      var engine = new speechConstructEngine();
-      
-      // Invoca callback devolvendo o objeto SpeechRecognition e speechConstructEngine
-      callback(recognizer, engine);
-    }
-  
-    $(document).ready(function(){
-      
-      $('#btn_enviar').click(function(e){
-        
-        e.preventDefault();
-        
-        startRecognizer(function(recognizer, engine){
-          log('Speech API start success !!!!');
-          
-          // Define propriedades
-          recognizer.continuous = true;           // Força gravação contínua
-          recognizer.interimResults = true;       // Altera o resultado ao inicializar nova gravação
-          recognizer.lang = "pt-BR";              // Define idioma
-          
-          // Inicia a gravação
-          recognizer.start();
-          
-          // Define Callbacks
-          recognizer.onstart = function(){
-            log('Gravação iniciada com sucesso ...');
-            
-            $('#btn_enviar').attr('value', 'Gravando ...');
-            
-          }
-          
-          recognizer.onend = function(){
-            log('Finalizando gravação ...');
-          }
-          
-          recognizer.onresult = function(event){
-            
-            var audioTranscritEvent = event
-            
-            if(event.results.length > 0){
-              
-              // Envia para a Engine construtora analisar o texto
-              engine.parseText(audioTranscritEvent, function(response){
-                
-                log('Callback Engine Parse Text Function:' + response)
-                
-                // Acrescenta o conteudo a pagina
-                $('#container').append(response);
-                
-                });
-            }
-            
-            
-          }
-          
-        });
-        
-      });
-      
-    });
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Full Slider - Start Bootstrap Template
+    // Bootstrap core CSS
+    link(href='stylesheets/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='stylesheets/full-slider.css', rel='stylesheet')
+  body
+    // Navigation
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+      .container
+        a.navbar-brand(href='#') Start Bootstrap
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item.active
+              a.nav-link(href='#')
+                | Home
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='#') About
+            li.nav-item
+              a.nav-link(href='#') Services
+            li.nav-item
+              a.nav-link(href='#') Contact
+    header
+      #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+          li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+          li(data-target='#carouselExampleIndicators', data-slide-to='1')
+          li(data-target='#carouselExampleIndicators', data-slide-to='2')
+        .carousel-inner(role='listbox')
+          // Slide One - Set the background image for this slide in the line below
+          .carousel-item.active(style="background-image: url('http://placehold.it/1900x1080')")
+            .carousel-caption.d-none.d-md-block
+              h3 First Slide
+              p This is a description for the first slide.
+          // Slide Two - Set the background image for this slide in the line below
+          .carousel-item(style="background-image: url('http://placehold.it/1900x1080')")
+            .carousel-caption.d-none.d-md-block
+              h3 Second Slide
+              p This is a description for the second slide.
+          // Slide Three - Set the background image for this slide in the line below
+          .carousel-item(style="background-image: url('http://placehold.it/1900x1080')")
+            .carousel-caption.d-none.d-md-block
+              h3 Third Slide
+              p This is a description for the third slide.
+        a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+    // Page Content
+    section.py-5
+      .container
+        h1 Full Slider by Start Bootstrap
+        p
+          | The background images for the slider are set directly in the HTML using inline CSS. The rest of the styles for this template are contained within the
+          code full-slider.css
+          | file.
+    // Footer
+    footer.py-5.bg-dark
+      .container
+        p.m-0.text-center.text-white Copyright © Your Website 2017
+      // /.container
+    // Bootstrap core JavaScript
+    script(src='javascripts/jquery.min.js')
+    script(src='javascripts/bootstrap.bundle.min.js')

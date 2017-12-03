@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Full Slider - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/full-slider.css" rel="stylesheet">
+
+    <style>
+
+    label{
+      margin:10px
+    }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header>
+
+    </header>
+
+    <!-- Page Content -->
+    <section>
+      <!--<div class="container">
+        <h1>Full Slider by Start Bootstrap</h1>
+        <p>The background images for the slider are set directly in the HTML using inline CSS. The rest of the styles for this template are contained within the
+          <code>full-slider.css</code>file.</p>
+      </div>-->
+
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+          <div class="carousel-item active" style="background: #e0e0e07a">
+            <div class="container" style="padding-top:10px;width:800px">
+              <h3>Você vai realizar o cadastro de um novo beneficiado</h3>
+              <strong>Preencha os campos abaixo para criar esse novo perfil</strong>
+              <hr>
+              <br />
+              <form style="width: 800px">
+                <label>Nome Completo</label>
+                <input type="text" class="form-control" placeholder="Nome da pessoa que você está atendendo" />
+                <br />
+                <label>Número do RG</label>
+                <input type="text" class="form-control" placeholder="00.000.000-0" />
+                <br />
+                <label>Data de nascimento</label>
+                <input type="text" class="form-control" placeholder="Dia/Mês/Ano" />
+                <br />
+                <label>Sexo</label>
+                <br>
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"/>Masc.</label>
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"/>Fem.</label>
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"/>Outro</label>
+                <br>
+                <div>
+                  <input class="btn btn-info" type="button" value="Prosseguir" />
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background: #e0e0e07a">
+            <div class="container" style="padding-top:10px;width:800px">
+              <h3>Coloque as informações de moradia do beneficiado</h3>
+              <strong>Caso não haja moradia fixa, aperte o botão prosseguir para continuar</strong>
+              <hr />
+              
+              <br />
+              <form>
+                <label>Endereço</label>
+                <input type="text" class="form-control" placeholder="Nome da rua do beneficiado, 74" />
+                <br />
+                <label>Cidade</label>
+                <input type="text" class="form-control" placeholder="São Paulo" />
+                <br />
+                <label>Bairro</label>
+                <input type="text" class="form-control" placeholder="Vila rosario" />
+                <br>
+                <div>
+                  <input class="btn btn-info" type="button" value="Prosseguir" />
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background: #e0e0e07a">
+            <div class="container" style="padding-top:10px;width:800px">
+              <h3>Avaliação socioeconômica do beneficiado</h3>
+              <strong>Os campos a seguir não podem ser deixados em branco, preencha todos</strong>
+              <hr />
+              <br />
+              <form>
+                <label>Está trabalhando?</label>
+                <br>
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"/>Sim</label>
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"/>Não</label>
+                <br>
+                <label>Renda mensal</label>
+                <br>
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"/>Zero a meio salário minimo</label>
+                <br />
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"/>Meio a um salário mínimo</label>
+                <br />
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"/>Um a dois salários minimos</label>
+                <br>
+                <label>Portador de deficiencia ?</label>
+                <br>
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"/>Física</label>
+                <br />
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"/>Auditiva</label>
+                <br />
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"/>Visual</label>
+                <br>
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"/>Outros</label>
+                <br>
+                <br>
+                <br>
+                <label>Observações</label>
+                <textarea class="form-control" rows="10"></textarea>
+                <div>
+                  <input class="btn btn-info" type="button" value="Prosseguir" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        setTimeout(function(){
+          $("#carouselExampleIndicators").carousel('pause');
+
+        }, 1000)
+
+      </script> 
+
+  </body>
+
+</html>
