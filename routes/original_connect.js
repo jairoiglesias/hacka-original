@@ -19,7 +19,7 @@ module.exports = function(app){
             authCode, uid
         })
 
-        res.send('Callback Original Connect Handled !!!')
+        res.render('callback_original')
         
     })
 

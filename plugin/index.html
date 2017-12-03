@@ -1,6 +1,5 @@
-
+<!DOCTYPE html>
 <html>
-
     <head>
 
         <style>
@@ -39,11 +38,13 @@
 
         </style>
 
+        <meta charset="utf-8">  
+
     </head>
 
     <body>
 
-        <div style="width: 600px;">
+        <div style="">
 
             <img src="singular.svg" alt="">
 
@@ -54,14 +55,19 @@
             <div style="margin:0 auto">
                 <form action="">
 
-                    <input class="btn" type="button" value="ORIGINAL CONNECT" />
+                    <input class="btn" type="button" id="btn_conectar" value="ORIGINAL CONNECT" />
                     <br>
-                    <input class="btn" type="button" value="CONECTAR PICPAY" />
+                    <input class="btn" type="button" id="btn_conectar_picpay" value="CONECTAR PICPAY" />
                     <br>
                     <input class="btn" type="button" value="OUTROS CARTÕES" />
                     <br>
                     <input class="btnBlank" type="button" value="CRIAR CONTA" />
                     <br>
+                    <input class="btnBlank" type="button" id="btn_sair" value="SAIR" />
+                    <br>
+                    <br>
+                    <br>
+                    <span id="status"></span>
 
                 </form>
             </div>
@@ -70,10 +76,7 @@
 
     </body>
 
-    <script type="text/javascript">
-
-    
-
-    </script>
+    <script src="jquery.js"></script>
+    <script src="index.js"></script>
 
 </html>
