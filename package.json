@@ -1,5 +1,5 @@
 {
-  "name": "cbox",
+  "name": "singular",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -15,8 +15,9 @@
     "serve-favicon": "~2.3.0",
     "express-load": "*",
     "mysql": "*",
-    "express-session" : "*"
-
+    "express-session" : "*",
+    "request-promise" : "*"
+    
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
