@@ -22,7 +22,7 @@ $(function(){
                     position:"bottom right"
                 })
 
-            }, 15000)
+            }, 5000)
 
             process = true
 
